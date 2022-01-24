@@ -6,7 +6,7 @@ import numpy as np
 # Get 3 readings from the user
 readings = list()
 print("Please enter readings in format: upper/lower/pulse")
-for i in range(2):
+for i in range(3):
     reading = input("Enter reading "+str(i+1)+": ")
     readings.append(reading)
 
@@ -27,6 +27,6 @@ avg_pulse = round(mean(pulse))
 
 # File Handeling
 with open("record.csv", "a+") as file_object:
-    current_datetime = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    current_datetime = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     file_object.write(
-        f"{current_datetime}, {avg_upper}, {avg_lower}, {avg_pulse}" + "\n")
+        f"{current_datetime},{avg_upper},{avg_lower},{avg_pulse}" + "\n")
