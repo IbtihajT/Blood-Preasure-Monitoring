@@ -116,3 +116,4 @@ dmypy.json
 # Personal
 record.csv
 analysis.ipynb
+.DS_Store
